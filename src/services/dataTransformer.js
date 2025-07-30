@@ -122,7 +122,7 @@ export class DataTransformer {
     const selectedKPIs = scores.selectedKPIs;
     const consistencyLabel = answers.Q5 || 'Not specified';
 
-    return `You're tracking ${selectedKPIs} of 6 core PE value-creation KPIs and report final numbers ${latencyLabel}. Your KPI consistency across business units is: ${consistencyLabel}.`;
+    return `You're tracking ${selectedKPIs} of 8 core PE value-creation KPIs and report final numbers ${latencyLabel}. Your KPI consistency across business units is: ${consistencyLabel}.`;
   }
 
   /**
@@ -135,6 +135,7 @@ export class DataTransformer {
       'Q4', // KPI tracking
       'Q5', // Consistency
       'Q7', // Reporting latency
+      'Q11', // Advanced capabilities
     ];
 
     const missing = requiredFields.filter(field => !answers[field]);

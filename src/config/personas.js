@@ -1,9 +1,9 @@
-// Private Equity Data Maturity Personas (0-50 point scale)
+// Private Equity Data Maturity Personas (0-60 point scale)  
 export const PERSONA_THRESHOLDS = {
-  P4: 45,
-  P3: 35,
-  P2: 25,
-  P1: 13,
+  P4: 54,
+  P3: 42,
+  P2: 30,
+  P1: 15,
   P0: 0
 };
 
@@ -60,9 +60,10 @@ export const GROWTH_STRATEGY_RECOMMENDATIONS = {
 
 // Hold period context recommendations
 export const HOLD_PERIOD_RECOMMENDATIONS = {
-  'Stabilize (0-12 months)': 'Establish data foundation and standardize core KPIs across business units.',
-  'Scale (13-36 months)': 'Implement advanced analytics and automation to accelerate growth.',
-  'Exit prep (>36 months)': 'Strengthen governance and create data story that enhances valuation.'
+  'Newly acquired (0–12 months)': 'Establish data foundation and standardize core KPIs across business units.',
+  'Early hold (Year 1–2)': 'Build scalable data infrastructure and automate reporting processes.',
+  'Mid hold (Year 2–4)': 'Implement advanced analytics and automation to accelerate growth.',
+  'Late hold / Exit planning (Year 4–5+)': 'Strengthen governance and create data story that enhances valuation.'
 };
 
  

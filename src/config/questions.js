@@ -7,12 +7,14 @@ export const sections = [
 ];
 
 export const peKPIs = [
-  'Revenue growth %',
-  'EBITDA margin',
-  'Net working-capital days',
-  'Synergy capture $',
-  'Customer churn %',
-  'Cash conversion cycle'
+  'Revenue Growth (Total & by Segment)',
+  'EBITDA / EBITDA Margin',
+  'Customer Retention / Churn Rate',
+  'Sales Pipeline & Conversion Rates',
+  'Operational Efficiency (e.g., DSO, Inventory Turns, Utilization)',
+  'Headcount & Labor Productivity',
+  'Forecast Accuracy (Revenue and EBITDA)',
+  'Net Promoter Score (NPS) or Customer Satisfaction'
 ];
 
 export const questions = {
@@ -22,9 +24,10 @@ export const questions = {
       question: 'Where is your PortCo in the PE hold period?',
       type: 'single-select',
       options: [
-        'Stabilize (0-12 months)',
-        'Scale (13-36 months)', 
-        'Exit prep (>36 months)'
+        'Newly acquired (0–12 months)',
+        'Early hold (Year 1–2)',
+        'Mid hold (Year 2–4)',
+        'Late hold / Exit planning (Year 4–5+)'
       ]
     },
     {
@@ -56,12 +59,14 @@ export const questions = {
       type: 'multi-select',
       note: 'Select all that apply',
       options: [
-        'Revenue growth %',
-        'EBITDA margin',
-        'Net working-capital days',
-        'Synergy capture $',
-        'Customer churn %',
-        'Cash conversion cycle'
+        'Revenue Growth (Total & by Segment)',
+        'EBITDA / EBITDA Margin',
+        'Customer Retention / Churn Rate',
+        'Sales Pipeline & Conversion Rates',
+        'Operational Efficiency (e.g., DSO, Inventory Turns, Utilization)',
+        'Headcount & Labor Productivity',
+        'Forecast Accuracy (Revenue and EBITDA)',
+        'Net Promoter Score (NPS) or Customer Satisfaction'
       ]
     },
     {
@@ -83,10 +88,12 @@ export const questions = {
       type: 'multi-select',
       note: 'Select all that apply',
       options: [
-        'Cloud DW/BI',
-        'On-prem DB',
-        'Excel',
-        'Board deck slides'
+        'ERP system (e.g., NetSuite, SAP, Microsoft Dynamics)',
+        'Excel / Google Sheets',
+        'Business Intelligence Tool (e.g., Power BI, Tableau, Looker)',
+        'Data Warehouse / Lake (e.g., Snowflake, Redshift, Databricks)',
+        'CRM (e.g., Salesforce, HubSpot)',
+        'Custom-built system'
       ]
     },
     {
@@ -94,21 +101,26 @@ export const questions = {
       question: 'How many days after month-end can the board see final numbers?',
       type: 'single-select',
       options: [
-        'Same day',
-        '≤7 days',
-        '8-14 days',
-        '>14 days'
+        '1–3 days',
+        '4–6 days',
+        '7–10 days',
+        '11–15 days',
+        'More than 15 days',
+        'Varies / Not consistent',
+        'Not sure'
       ]
     },
     {
       id: 'Q8',
-      question: 'Estimated % of data still touched manually each cycle?',
+      question: 'Approximately what percentage of data used for monthly reporting requires manual handling (e.g., via Excel, email, copy/paste)?',
       type: 'single-select',
       options: [
-        '0-10%',
-        '11-30%',
-        '31-60%',
-        '61-100%'
+        '0–10% (mostly automated)',
+        '11–25%',
+        '26–50%',
+        '51–75%',
+        '76–100% (mostly manual)',
+        'Not sure'
       ]
     }
   ],
@@ -119,24 +131,26 @@ export const questions = {
       type: 'multi-select',
       note: 'Select all that apply',
       options: [
-        'Data dictionary',
-        'Ownership RACI',
-        'Access controls',
-        'Compliance audits',
-        'None'
+        'Defined data owners or stewards',
+        'Formal data governance policies or standards',
+        'Automated data quality checks in reporting',
+        'Role-based user access controls',
+        'Change control process for reporting logic or data models',
+        'None / Informal governance only'
       ]
     },
     {
       id: 'Q10',
-      question: 'Who actively uses data dashboards to run the business?',
+      question: 'Who actively uses data dashboards to support day-to-day or strategic decision-making?',
       type: 'multi-select',
       note: 'Select all that apply',
       options: [
-        'Board',
-        'C-suite',
-        'Functional VPs',
-        'Line managers',
-        'Analysts'
+        'Executive leadership (CEO, CFO, COO, etc.)',
+        'Department heads / functional leaders',
+        'Front-line managers / team leads',
+        'Analysts / data teams only',
+        'Board members',
+        'Dashboards are rarely used'
       ]
     }
   ],
@@ -146,21 +160,24 @@ export const questions = {
       question: 'Which advanced capabilities are live today?',
       type: 'single-select',
       options: [
-        'None',
-        'Automated variance commentary',
-        'Forecast models',
-        'ML / GenAI simulations'
+        'Automated variance commentary (for board reports)',
+        'Predictive forecasting models',
+        'Real-time performance dashboards',
+        'Self-service analytics for executives',
+        'AI-powered insights generation',
+        'None - basic reporting only'
       ]
     },
     {
       id: 'Q12',
-      question: 'Is your stack predominantly SaaS/cloud?',
+      question: 'Is your data and reporting stack primarily cloud-based (SaaS)?',
       type: 'single-select',
       options: [
-        'Yes, >80%',
-        'Hybrid',
-        'Mostly on-prem',
-        'Unsure'
+        'Fully cloud-based / SaaS (e.g., NetSuite, Power BI, Snowflake)',
+        'Mostly cloud, with some on-premise systems',
+        'Mostly on-premise, with limited cloud tools',
+        'Entirely on-premise / legacy systems',
+        'Not sure'
       ]
     }
   ]

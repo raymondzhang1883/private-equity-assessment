@@ -10,44 +10,52 @@ export const CONSISTENCY_SCORING = {
 
 // Reporting Latency Scoring (Q7)
 export const LATENCY_SCORING = {
-  'Same day': 10,
-  '≤7 days': 8,
-  '8-14 days': 5,
-  '>14 days': 1
+  '1–3 days': 10,
+  '4–6 days': 8,
+  '7–10 days': 6,
+  '11–15 days': 3,
+  'More than 15 days': 1,
+  'Varies / Not consistent': 2,
+  'Not sure': 1
 };
 
 // Manual Work Scoring (Q8)
 export const MANUAL_WORK_SCORING = {
-  '0-10%': 10,
-  '11-30%': 7,
-  '31-60%': 4,
-  '61-100%': 1
+  '0–10% (mostly automated)': 10,
+  '11–25%': 8,
+  '26–50%': 5,
+  '51–75%': 3,
+  '76–100% (mostly manual)': 1,
+  'Not sure': 2
 };
 
 // Advanced Analytics Scoring (Q11)
 export const ANALYTICS_SCORING = {
-  'None': 1,
-  'Automated variance commentary': 4,
-  'Forecast models': 7,
-  'ML / GenAI simulations': 10
+  'Automated variance commentary (for board reports)': 4,
+  'Predictive forecasting models': 7,
+  'Real-time performance dashboards': 5,
+  'Self-service analytics for executives': 6,
+  'AI-powered insights generation': 10,
+  'None - basic reporting only': 1
 };
 
 // Cloud/SaaS Scoring (Q12)
 export const CLOUD_SCORING = {
-  'Yes, >80%': 3,
-  'Hybrid': 2,
-  'Mostly on-prem': 1,
-  'Unsure': 0
+  'Fully cloud-based / SaaS (e.g., NetSuite, Power BI, Snowflake)': 10,
+  'Mostly cloud, with some on-premise systems': 7,
+  'Mostly on-premise, with limited cloud tools': 4,
+  'Entirely on-premise / legacy systems': 1,
+  'Not sure': 2
 };
 
 // Governance scoring - +2 points per safeguard, capped at 10
 export const GOVERNANCE_POINTS_PER_SAFEGUARD = 2;
 export const GOVERNANCE_MAX_POINTS = 10;
 
-// Persona Definitions based on total score (0-50 points)
+// Persona Definitions based on total score (0-60 points)
 export const PERSONAS = {
   P0: {
-    range: [0, 12],
+    range: [0, 14],
     label: 'Reactive / Spreadsheet-Centric',
     description: 'KPIs in silos; manual fire-fighting',
     recommendations: [
@@ -57,7 +65,7 @@ export const PERSONAS = {
     ]
   },
   P1: {
-    range: [13, 24],
+    range: [15, 29],
     label: 'Foundational / Board-Ready',
     description: 'Defined KPIs but manual pulls; hindsight view',
     recommendations: [
@@ -67,7 +75,7 @@ export const PERSONAS = {
     ]
   },
   P2: {
-    range: [25, 34],
+    range: [30, 41],
     label: 'Integrated / Synergy-Seeker',
     description: 'Systems integrated; weekly insight loop',
     recommendations: [
@@ -77,7 +85,7 @@ export const PERSONAS = {
     ]
   },
   P3: {
-    range: [35, 44],
+    range: [42, 53],
     label: 'Predictive / Value Accelerator',
     description: 'Forecasting & scenario models guide decisions',
     recommendations: [
@@ -87,7 +95,7 @@ export const PERSONAS = {
     ]
   },
   P4: {
-    range: [45, 50],
+    range: [54, 60],
     label: 'Strategic / Exit-Ready',
     description: 'Data is a differentiator; equity story asset',
     recommendations: [
@@ -100,19 +108,25 @@ export const PERSONAS = {
 
 // CTA Configurations based on context
 export const CTA_CONFIGURATIONS = {
-  'Stabilize (0-12 months)': {
+  'Newly acquired (0–12 months)': {
     primaryCTA: 'Download our PE Data Maturity Whitepaper',
     primaryCTALink: 'https://hubs.ly/Q03w50s40',
     secondaryCTA: 'Schedule Stabilization Consult',
     valueProposition: 'Get your data foundation right during the critical stabilization phase.'
   },
-  'Scale (13-36 months)': {
+  'Early hold (Year 1–2)': {
+    primaryCTA: 'Download our PE Data Maturity Whitepaper',
+    primaryCTALink: 'https://hubs.ly/Q03w50s40',
+    secondaryCTA: 'Schedule Early Growth Strategy Session',
+    valueProposition: 'Build scalable data infrastructure for sustainable growth.'
+  },
+  'Mid hold (Year 2–4)': {
     primaryCTA: 'Download our PE Data Maturity Whitepaper',
     primaryCTALink: 'https://hubs.ly/Q03w50s40',
     secondaryCTA: 'Schedule Scale Strategy Session',
     valueProposition: 'Accelerate growth with data-driven insights and automation.'
   },
-  'Exit prep (>36 months)': {
+  'Late hold / Exit planning (Year 4–5+)': {
     primaryCTA: 'Download our PE Data Maturity Whitepaper',
     primaryCTALink: 'https://hubs.ly/Q03w50s40',
     secondaryCTA: 'Schedule Exit Prep Review',
@@ -120,28 +134,33 @@ export const CTA_CONFIGURATIONS = {
   }
 };
 
-// Scoring dimension weights for 50-point scale
+// Scoring dimension weights for 60-point scale
 export const SCORING_DIMENSIONS = {
   KPI_BREADTH: { maxPoints: 10, weight: 1 },
   CONSISTENCY: { maxPoints: 10, weight: 1 },
   GOVERNANCE: { maxPoints: 10, weight: 1 },
   AUTOMATION_INTEGRATION: { maxPoints: 10, weight: 1 },
-  ANALYTICS_READINESS: { maxPoints: 10, weight: 1 }
+  ANALYTICS_READINESS: { maxPoints: 10, weight: 1 },
+  CLOUD_ADOPTION: { maxPoints: 10, weight: 1 }
 };
 
 // Legacy exports for compatibility
 export const LATENCY_LABELS = {
-  'Same day': 'same day',
-  '≤7 days': 'within a week',
-  '8-14 days': '1-2 weeks',
-  '>14 days': 'more than 2 weeks'
+  '1–3 days': 'within 3 days',
+  '4–6 days': 'within a week',
+  '7–10 days': '1-2 weeks',
+  '11–15 days': '2-3 weeks',
+  'More than 15 days': 'more than 2 weeks',
+  'Varies / Not consistent': 'inconsistent timing',
+  'Not sure': 'uncertain'
 };
 
 export const LEAD_SCORING_WEIGHTS = {
   PE_HOLD_PERIOD: {
-    'Stabilize (0-12 months)': 5,
-    'Scale (13-36 months)': 10,
-    'Exit prep (>36 months)': 15
+    'Newly acquired (0–12 months)': 5,
+    'Early hold (Year 1–2)': 8,
+    'Mid hold (Year 2–4)': 10,
+    'Late hold / Exit planning (Year 4–5+)': 15
   },
   GROWTH_STRATEGY: {
     'Organic': 5,

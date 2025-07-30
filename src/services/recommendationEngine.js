@@ -29,7 +29,7 @@ export class RecommendationEngine {
    * Get contextual call-to-action configuration for PE
    */
   static getContextualCTA(holdPeriod, growthStrategy, systemComplexity, personaLabel = '') {
-    const ctaConfig = CTA_CONFIGURATIONS[holdPeriod] || CTA_CONFIGURATIONS['Scale (13-36 months)'];
+    const ctaConfig = CTA_CONFIGURATIONS[holdPeriod] || CTA_CONFIGURATIONS['Mid hold (Year 2–4)'];
     
     let { primaryCTA, secondaryCTA, valueProposition } = ctaConfig;
 
@@ -68,12 +68,14 @@ export class RecommendationEngine {
     }
 
     const peKPIImpacts = {
-      'Revenue growth %': 'track growth trajectory against plan',
-      'EBITDA margin': 'monitor profitability trends',
-      'Net working-capital days': 'optimize cash conversion',
-      'Synergy capture $': 'measure M&A value realization',
-      'Customer churn %': 'predict revenue retention risks',
-      'Cash conversion cycle': 'improve working capital efficiency'
+      'Revenue Growth (Total & by Segment)': 'track growth trajectory by business unit',
+      'EBITDA / EBITDA Margin': 'monitor profitability trends and margin optimization',
+      'Customer Retention / Churn Rate': 'predict revenue retention risks and customer lifetime value',
+      'Sales Pipeline & Conversion Rates': 'forecast revenue and optimize sales efficiency',
+      'Operational Efficiency (e.g., DSO, Inventory Turns, Utilization)': 'optimize working capital and resource utilization',
+      'Headcount & Labor Productivity': 'manage workforce efficiency and scaling',
+      'Forecast Accuracy (Revenue and EBITDA)': 'improve planning reliability and board confidence',
+      'Net Promoter Score (NPS) or Customer Satisfaction': 'measure customer loyalty and retention risk'
     };
 
     const impactDescriptions = missingKPIs.map(kpi => peKPIImpacts[kpi]).filter(Boolean);
@@ -81,7 +83,7 @@ export class RecommendationEngine {
     return {
       title: 'Consider Adding These PE Value-Creation KPIs',
       description: `Missing: ${missingKPIs.join(', ')}. These metrics help you ${impactDescriptions.join(', ')}.`,
-      impact: 'Portfolio companies tracking all 6 KPIs typically see 15-25% faster value creation cycles.'
+      impact: 'Portfolio companies tracking all 8 KPIs typically see 15-25% faster value creation cycles.'
     };
   }
 } 

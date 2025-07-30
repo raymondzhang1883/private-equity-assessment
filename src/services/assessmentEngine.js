@@ -209,11 +209,16 @@ export class AssessmentEngine {
         forecast: {
           value: scores.forecast,
           percentage: DataTransformer.formatScoreAsPercentage(scores.forecast),
-          description: 'Forecasting Capability Score'
+          description: 'Advanced Analytics Score'
+        },
+        cloudReadiness: {
+          value: scores.cloudReadiness,
+          percentage: DataTransformer.formatScoreAsPercentage(scores.cloudReadiness),
+          description: 'Cloud Adoption Score'
         },
         total: {
           value: scores.total,
-          maxValue: 47,
+          maxValue: 60,
           description: 'Total Maturity Score'
         }
       },

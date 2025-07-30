@@ -235,7 +235,7 @@ const PrivateEquityDataMaturityAssessment = () => {
             </div>
             <div className="text-center p-4 bg-gray-50 rounded-lg">
               <div className="text-xs text-gray-600 h-8 flex items-center justify-center">You are automating</div>
-              <div className="text-2xl font-bold text-blue-600">{scores.automation}%</div>
+              <div className="text-2xl font-bold text-blue-600">{scores.automationPercentage}%</div>
               <div className="text-xs text-gray-500 mt-1">of potential services</div>
             </div>
             <div className="text-center p-4 bg-gray-50 rounded-lg">
