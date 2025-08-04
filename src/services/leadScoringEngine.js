@@ -50,67 +50,7 @@ export class LeadScoringEngine {
     }
   }
 
-  /**
-   * Get lead scoring breakdown for transparency
-   */
-  static getLeadScoreBreakdown(totalScore, context) {
-    const breakdown = {
-      baseScore: totalScore,
-      modifiers: [],
-      total: totalScore
-    };
 
-    let adjustments = 0;
-
-    // Owner adjustments
-    if (context.owner && LEAD_SCORING_WEIGHTS.OWNER_MODIFIERS[context.owner]) {
-      const adjustment = LEAD_SCORING_WEIGHTS.OWNER_MODIFIERS[context.owner];
-      breakdown.modifiers.push({
-        factor: 'KPI Owner',
-        value: context.owner,
-        adjustment: adjustment
-      });
-      adjustments += adjustment;
-    }
-
-    // Timeline adjustments
-    if (context.timeline && LEAD_SCORING_WEIGHTS.TIMELINE_MODIFIERS[context.timeline]) {
-      const adjustment = LEAD_SCORING_WEIGHTS.TIMELINE_MODIFIERS[context.timeline];
-      breakdown.modifiers.push({
-        factor: 'Implementation Timeline',
-        value: context.timeline,
-        adjustment: adjustment
-      });
-      adjustments += adjustment;
-    }
-
-    // Challenge adjustments
-    if (context.challenge && LEAD_SCORING_WEIGHTS.CHALLENGE_MODIFIERS[context.challenge]) {
-      const adjustment = LEAD_SCORING_WEIGHTS.CHALLENGE_MODIFIERS[context.challenge];
-      breakdown.modifiers.push({
-        factor: 'Operational Challenge',
-        value: context.challenge,
-        adjustment: adjustment
-      });
-      adjustments += adjustment;
-    }
-
-    // Growth strategy adjustments
-    if (context.growth && LEAD_SCORING_WEIGHTS.GROWTH_MODIFIERS[context.growth]) {
-      const adjustment = LEAD_SCORING_WEIGHTS.GROWTH_MODIFIERS[context.growth];
-      breakdown.modifiers.push({
-        factor: 'Growth Strategy',
-        value: context.growth,
-        adjustment: adjustment
-      });
-      adjustments += adjustment;
-    }
-
-    breakdown.total = Math.max(0, totalScore + adjustments);
-    breakdown.totalAdjustments = adjustments;
-
-    return breakdown;
-  }
 
   /**
    * Check if lead should trigger immediate sales notification

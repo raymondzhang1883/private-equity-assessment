@@ -5,8 +5,7 @@ import {
   ANALYTICS_SCORING,
   CLOUD_SCORING,
   GOVERNANCE_POINTS_PER_SAFEGUARD,
-  GOVERNANCE_MAX_POINTS,
-  SCORING_DIMENSIONS
+  GOVERNANCE_MAX_POINTS
 } from '../config/scoringRules.js';
 import { peKPIs } from '../config/questions.js';
 

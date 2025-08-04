@@ -176,56 +176,7 @@ export class AssessmentEngine {
     return completedSections;
   }
 
-  /**
-   * Get detailed scoring breakdown for debugging/transparency
-   */
-  static getDetailedBreakdown(answers) {
-    const scores = ScoringEngine.calculateAllScores(answers);
-    const context = DataTransformer.extractContext(answers);
-    const leadScoreBreakdown = LeadScoringEngine.getLeadScoreBreakdown(scores.total, context);
-    
-    return {
-      scores: {
-        coverage: {
-          value: scores.coverage,
-          percentage: DataTransformer.formatScoreAsPercentage(scores.coverage),
-          description: 'KPI Coverage Score'
-        },
-        confidence: {
-          value: scores.confidence,
-          percentage: DataTransformer.formatScoreAsPercentage(scores.confidence),
-          description: 'Data Confidence Score'
-        },
-        latency: {
-          value: scores.latency,
-          percentage: DataTransformer.formatScoreAsPercentage(scores.latency),
-          description: 'Reporting Speed Score'
-        },
-        automation: {
-          value: scores.automation,
-          percentage: DataTransformer.formatScoreAsPercentage(scores.automation),
-          description: 'Automation Score'
-        },
-        forecast: {
-          value: scores.forecast,
-          percentage: DataTransformer.formatScoreAsPercentage(scores.forecast),
-          description: 'Advanced Analytics Score'
-        },
-        cloudReadiness: {
-          value: scores.cloudReadiness,
-          percentage: DataTransformer.formatScoreAsPercentage(scores.cloudReadiness),
-          description: 'Cloud Adoption Score'
-        },
-        total: {
-          value: scores.total,
-          maxValue: 60,
-          description: 'Total Maturity Score'
-        }
-      },
-      leadScoring: leadScoreBreakdown,
-      context
-    };
-  }
+
 }
 
 /**

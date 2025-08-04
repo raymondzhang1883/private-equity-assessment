@@ -80,16 +80,6 @@ export const CTA_CONFIGURATIONS = {
   }
 };
 
-// Scoring dimension weights for 60-point scale
-export const SCORING_DIMENSIONS = {
-  KPI_BREADTH: { maxPoints: 10, weight: 1 },
-  CONSISTENCY: { maxPoints: 10, weight: 1 },
-  GOVERNANCE: { maxPoints: 10, weight: 1 },
-  AUTOMATION_INTEGRATION: { maxPoints: 10, weight: 1 },
-  ANALYTICS_READINESS: { maxPoints: 10, weight: 1 },
-  CLOUD_ADOPTION: { maxPoints: 10, weight: 1 }
-};
-
 // Legacy exports for compatibility
 export const LATENCY_LABELS = {
   '1–3 days': 'within 3 days',
