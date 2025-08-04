@@ -52,60 +52,6 @@ export const CLOUD_SCORING = {
 export const GOVERNANCE_POINTS_PER_SAFEGUARD = 2;
 export const GOVERNANCE_MAX_POINTS = 10;
 
-// Persona Definitions based on total score (0-60 points)
-export const PERSONAS = {
-  P0: {
-    range: [0, 14],
-    label: 'Reactive / Spreadsheet-Centric',
-    description: 'KPIs in silos; manual fire-fighting',
-    recommendations: [
-      'Run a Strategic Data Roadmap',
-      'Standardize top-10 KPIs and definitions',
-      'Replace spreadsheet consolidations with a single source of truth'
-    ]
-  },
-  P1: {
-    range: [15, 29],
-    label: 'Foundational / Board-Ready',
-    description: 'Defined KPIs but manual pulls; hindsight view',
-    recommendations: [
-      'Automate refresh pipelines to cut manual effort',
-      'Deliver sprint-based dashboards to prove value quickly',
-      'Pilot GenAI to draft variance commentary for board packs'
-    ]
-  },
-  P2: {
-    range: [30, 41],
-    label: 'Integrated / Synergy-Seeker',
-    description: 'Systems integrated; weekly insight loop',
-    recommendations: [
-      'Stand up a scalable cloud data platform (SaaS-first)',
-      'Embed Q&A chat over dashboards for executives',
-      'Formalize governance council to keep definitions aligned'
-    ]
-  },
-  P3: {
-    range: [42, 53],
-    label: 'Predictive / Value Accelerator',
-    description: 'Forecasting & scenario models guide decisions',
-    recommendations: [
-      'Embed analytics into frontline workflows (pricing, inventory)',
-      'Validate governance to support ML at scale',
-      'Use GenAI to simulate strategic options before board meetings'
-    ]
-  },
-  P4: {
-    range: [54, 60],
-    label: 'Strategic / Exit-Ready',
-    description: 'Data is a differentiator; equity story asset',
-    recommendations: [
-      'Transition run-state to Managed Data Services to control costs and ensure continuity',
-      'Tighten forward-looking governance & audit trails to de-risk diligence',
-      'Establish DataOps + GenAI operating model for continuous insight delivery'
-    ]
-  }
-};
-
 // CTA Configurations based on context
 export const CTA_CONFIGURATIONS = {
   'Newly acquired (0–12 months)': {
