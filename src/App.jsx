@@ -486,7 +486,7 @@ const PrivateEquityDataMaturityAssessment = () => {
 
         <div className="mt-8 text-center">
           <p className="text-xs text-gray-400">
-            By taking this assessment, you consent to Resultant storing your responses for analysis and follow-up communication. You can access your results regardless of this choice.
+            By taking this assessment, you consent to The Company storing your responses for analysis and follow-up communication. You can access your results regardless of this choice.
           </p>
         </div>
       </div>

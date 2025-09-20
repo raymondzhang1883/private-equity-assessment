@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
+  "author": "Raymond Zhang",
+  "description": "Private equity data maturity assessment platform with intelligent scoring and persona-based recommendations",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
